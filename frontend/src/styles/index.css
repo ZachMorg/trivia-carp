@@ -1,0 +1,27 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+body{
+    background: url(https://i.pinimg.com/736x/47/7a/a5/477aa57b11f392b20d3ae6539cf6197c.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0 0 30px 0;
+    font-family: Oxygen;
+    color: rgb(209, 242, 252);
+}
+
+a{
+    color: rgb(230, 158, 50);
+}
+
+button{
+    background-color: rgb(255, 180, 67);
+}
+
+.card{
+    background-color: rgb(209, 242, 252);
+    outline-width: 0px;
+}

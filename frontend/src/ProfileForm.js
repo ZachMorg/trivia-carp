@@ -33,13 +33,21 @@ const ProfileForm = function(){
     };
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email:</label>
-                <input onChange={handleChange} name='email' id='email' value={formData.email}/>
-                <button>Submit Changes</button>
-            </form>
+        <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5">
+            <div className="card">
+                <div className="card-body">
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor='email'>Email:</label>
+                            <br/>
+                            <input onChange={handleChange} name='email' id='email' value={formData.email}/> 
+                        </div>
+                        <button>Submit Changes</button>
+                    </form> 
+                </div>
+            </div>
         </div>
+        
     )
 }
 

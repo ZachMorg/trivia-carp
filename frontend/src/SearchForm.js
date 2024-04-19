@@ -14,12 +14,14 @@ function SearchForm({submit}){
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} name='search' id='search' value={search}/>
-                <button>Search</button>
-            </form>
-        </div>
+            <div className="search-div my-4 mx-auto">
+                <div className="d-flex justify-content-center">
+                    <form onSubmit={handleSubmit}>
+                        <input onChange={handleChange} name='search' id='search' value={search}/>
+                        <button>Search</button>
+                    </form> 
+                </div>
+            </div>
     )
 }
 

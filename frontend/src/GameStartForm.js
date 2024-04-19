@@ -18,7 +18,7 @@ const GameStartForm = function(){
         callApi();
     },[]);
 
-    if(categories == []){
+    if(categories.length === 0){
         return(<h2>Loading...</h2>)
     }
 
@@ -49,23 +49,33 @@ const GameStartForm = function(){
     };
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='amount'>Number of questions:</label>
-                <input onChange={handleChange} name='amount' id='amount' value={formData.amount}/>
-                <label htmlFor='category'>Category:</label>
-                <select onChange={handleChange} name='category' id='category'>
-                    {categories.map(c => (
-                        <option value={c.id}>{c.name}</option>
-                    ))}
-                </select>
-                <label htmlFor='type'>Type:</label>
-                <select onChange={handleChange} name='type' id='type'>
-                    <option value='multiple'>Multiple Choice</option>
-                    <option value='boolean'>True or False</option>
-                </select>
-                <button>Start Game!</button>
-            </form>
+        <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5">
+            <div className="card">
+                <div className="card-body">
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor='amount'>Number of questions:</label>
+                        <br/>
+                        <input onChange={handleChange} name='amount' id='amount' value={formData.amount}/>
+                        <br/>
+                        <label htmlFor='category'>Category:</label>
+                        <br/>
+                        <select onChange={handleChange} name='category' id='category'>
+                            {categories.map(c => (
+                                <option value={c.id}>{c.name}</option>
+                            ))}
+                        </select>
+                        <br/>
+                        <label htmlFor='type'>Type:</label>
+                        <br/>
+                        <select onChange={handleChange} name='type' id='type'>
+                            <option value='multiple'>Multiple Choice</option>
+                            <option value='boolean'>True or False</option>
+                        </select>
+                        <br/>
+                        <button>Start Game!</button>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

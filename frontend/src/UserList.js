@@ -43,13 +43,18 @@ const UserList = function(){
     return(
         <div>
             <SearchForm submit={submitSearch}/>
-            {users.map(u => (
-                <div>
-                    <Link to={`/profile/${u.username}`}>
-                        <h4>{u.username}</h4>
-                    </Link>
+            <br/>
+            <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5">
+                <div className="card">
+                    {users.map(u => (
+                        <div className="card-body">
+                            <Link to={`/profile/${u.username}`}>
+                                <h3>{u.username}</h3>
+                            </Link>
+                        </div>
+                    ))}
                 </div>
-            ))}
+            </div>
         </div>
     )
 }

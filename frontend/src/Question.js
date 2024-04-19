@@ -27,14 +27,20 @@ const Question = function({handleAnswer, question}){
 
     return(
         <div>
-            <h2>{question.question}</h2>
-            <form>
-                {answers.map(a => (
-                    <div>
-                        <button onClick={handleSubmit} value={a}>{a}</button>
-                    </div>
-                ))}
-            </form>
+            <div className="d-flex justify-content-center">
+               <h2>{question.question}</h2> 
+            </div>
+            <div className="container col-md-6 offset-md-3 col-lg-3 offset-lg-3 mt-5">
+                <div className="card text-center">
+                    <form>
+                        {answers.map(a => (
+                            <div className="my-4">
+                                <button onClick={handleSubmit} value={a}>{a}</button>
+                            </div>
+                        ))}
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

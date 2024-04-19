@@ -29,16 +29,26 @@ const SignupForm = function({signup}){
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username'>Username:</label>
-                <input onChange={handleChange} name='username' id='username' value={formData.username}/>
-                <label htmlFor='password'>Password:</label>
-                <input onChange={handleChange} name='password' id='password' value={formData.password}/>
-                <label htmlFor='email'>Email:</label>
-                <input onChange={handleChange} name='email' id='email' value={formData.email}/>
-                <button>Sign Up</button>
-            </form>
+        <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5">
+            <div className="card">
+                <div className="card-body">
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor='username'>Username:</label>
+                        <br/>
+                        <input onChange={handleChange} name='username' id='username' value={formData.username}/>
+                        <br/>
+                        <label htmlFor='password'>Password:</label>
+                        <br/>
+                        <input type="password" onChange={handleChange} name='password' id='password' value={formData.password}/>
+                        <br/>
+                        <label htmlFor='email'>Email:</label>
+                        <br/>
+                        <input onChange={handleChange} name='email' id='email' value={formData.email}/>
+                        <br/>
+                        <button>Sign Up</button>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

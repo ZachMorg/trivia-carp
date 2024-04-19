@@ -2,11 +2,9 @@ import React, {useState, useEffect, useContext} from 'react';
 import TriviaCarpApi from './api';
 import FriendList from './FriendList';
 import UserContext from './UserContext';
-import { redirect, useNavigate } from 'react-router-dom';
+import './styles/ProfileDisplay.css';
 
 const ProfileDisplay = function({user}){
-
-    const navigate = useNavigate();
 
     const {currUser, removeFriend, addFriend} = useContext(UserContext); 
 
@@ -40,7 +38,7 @@ const ProfileDisplay = function({user}){
     if(games.length > 0){
         gamesHtml = games.slice(0,5).map(g => (
             <div>
-                <h4>{g.category} - {g.numCorrect}/{g.numQuestions}</h4>
+                <h5>{g.category} - {g.numCorrect}/{g.numQuestions}</h5>
             </div>
         ))
     }
@@ -66,16 +64,24 @@ const ProfileDisplay = function({user}){
     }
 
     return (
-        <div>
-            <h2>{user.username}</h2>
-            {friendButton}
-            <div>
-                <h3>5 most recent games:</h3>
-                {gamesHtml}
+        <div className="">
+            <div className="d-flex justify-content-center">
+                <h2>{user.username}</h2>
+                {friendButton}
             </div>
-            
-            <h3>Friends:</h3>
-            <FriendList user={user}/>
+            <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5">
+                <div className="card">
+                    <h3>5 most recent games:</h3>
+                    {gamesHtml}
+                </div>
+            </div>
+            <br/>
+            <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-5">
+                <div className="card">
+                    <h3>Friends:</h3>
+                    <FriendList user={user}/>
+                </div>
+            </div>
         </div>
     )
 }

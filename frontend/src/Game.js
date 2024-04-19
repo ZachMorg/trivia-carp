@@ -42,7 +42,9 @@ const Game = function(){
     if(currQuestion > questions.length-1){
         returnResults();
         return(
-            <h2>You got {numCorrect} out of {questions.length} questions right!</h2>
+            <div className="d-flex justify-content-center">
+                <h2>You got {numCorrect} out of {questions.length} questions right!</h2>
+            </div>
         )
     }
 

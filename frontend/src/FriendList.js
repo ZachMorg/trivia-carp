@@ -7,6 +7,14 @@ const FriendList = function({user}){
 
     console.log(friends);
 
+    if(friends.length === 0){
+        return(
+            <div>
+                <h4>Add friends through the <Link to={`/users`}>user search tool</Link>!</h4>
+            </div>
+        )
+    }
+
     return(
         <div>
             {friends.map(f => (
