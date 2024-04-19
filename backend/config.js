@@ -9,7 +9,7 @@ const PORT = +process.env.PORT || 3001;
 
 const getDatabaseUri = function(){
     if(process.env.NODE_ENV === 'production'){
-        return 'special db uri'
+        return 'postgres://ftdfxape:UEzh4MC1t13oB-5ngy3nxuUU5dTi9v6S@kala.db.elephantsql.com/ftdfxape'
     }
     return 'postgresql://postgres:Secret123@localhost/trivia_carp'
 }
